@@ -1,0 +1,27 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+     // Use array to set indiviaul types to beautify: ["js", "html", "css"]. Requires "editor.formatOnSave" to be true.
+    "beautify.onSave": true,
+
+    // Link file types to the beautifier type
+    "beautify.language": {
+        "js": {
+            "type": [
+                "javascript",
+                "json"
+            ],
+            "filename": [
+                ".jshintrc",
+                ".jsbeautify"
+            ]
+        },
+        "css": [
+            "css",
+            "scss"
+        ],
+        "html": [
+            "htm",
+            "html"
+        ]
+    }
+}

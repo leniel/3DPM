@@ -21,7 +21,7 @@ $(function () {
     //var sql = require('./sql.js');
     var sql = window.SQL;
 
-    var dbstr = window.localStorage.getItem("pm3d.sqlite");
+    var dbstr = window.localStorage.getItem("3dpm.sqlite");
 
     if (dbstr) {
         var db = new SQL.Database(toBinArray(dbstr));
@@ -88,7 +88,7 @@ INSERT INTO PackageActivities VALUES
         },
         function done() {
             var dbstr = toBinString(db.export());
-            window.localStorage.setItem("pm3d.sqlite", dbstr);
+            window.localStorage.setItem("3dpm.sqlite", dbstr);
         }
     );
 
