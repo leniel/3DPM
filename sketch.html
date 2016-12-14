@@ -8,14 +8,14 @@
     <link rel=stylesheet href="css/custom.css" />
     <link rel=stylesheet href="css/info.css" />
     
-    <script src="jquery-3.1.1.js"></script>
-    <script src="jquery-ui.min.js"></script>
-    <script src="info.js"></script>
-    <script src="three.js"></script>
-    <script src="stats.min.js"></script>
-    <script src="orbitcontrols.js"></script>
-    <script src="threex.dynamictexture.js"></script>
-    <script src="cube.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/info.js"></script>
+    <script src="js/three.js"></script>
+    <script src="js/stats.min.js"></script>
+    <script src="js/orbitcontrols.js"></script>
+    <script src="js/threex.dynamictexture.js"></script>
+    <script src="js/cube.js"></script>
 
 </head>
 
@@ -108,7 +108,7 @@ function init()
           y: 150
         });
 
-    var material = new THREE.LineBasicMaterial({ color: 0x6699FF, linewidth: 1, fog:true });
+    var material = new THREE.LineBasicMaterial({ color: 'black', linewidth: 1, fog:true });
 
     var line = new THREE.LineSegments( geometry, material );
 
