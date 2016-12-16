@@ -79,7 +79,7 @@ THREEx.DynamicTexture.prototype.drawTextCooked = function(text, options){
 	var canvas	= this.canvas
 	options		= options	|| {}
 	var params	= {
-		margin		: options.margin !== undefined ? options.margin	: 0.15,
+		margin		: options.margin !== undefined ? options.margin	: 0.1,
 		lineHeight	: options.lineHeight !== undefined ? options.lineHeight : 0.25,
 		align		: options.align !== undefined ? options.align : 'center',
 		fillStyle	: options.fillStyle !== undefined ? options.fillStyle : 'black',
