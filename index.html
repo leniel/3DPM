@@ -101,6 +101,10 @@ $(document).ready(function() {
         // Calls project-wbs.js function to lay down the Project's Work Break Down Structure
         createProjectWorkBreakDownStructure();
 
+        // The sample WBS must contain 41 cubes
+        console.assert(cubeCount == 41, 'Wrong number of cubes added to the scene.');
+        //console.table(objects);
+
         document.addEventListener('mousedown', onDocumentMouseDown, false);
         document.addEventListener('touchstart', onDocumentTouchStart, false);
 

@@ -31,6 +31,7 @@ function createCube(props) {
     var cubeGeometry =
     new THREE.CubeGeometry(props.width ? props.width : 140, props.height ? props.height : 60, props.depth ? props.depth : 80); //x, y, z
 
+    // One MeshBasicMaterial for each of the 6 cube faces
     var cubeMaterial = new THREE.MeshFaceMaterial(
         [
             new THREE.MeshBasicMaterial({
@@ -46,7 +47,8 @@ function createCube(props) {
                 map: createDynamicTexture(props.face4, props.width, props.height)
             }),
             new THREE.MeshBasicMaterial({
-                map: createDynamicTexture(props.face5, props.width, props.height)
+                map: createDynamicTexture(props.face5, props.width, props.height),
+                //wireframe: true
             }),
             new THREE.MeshBasicMaterial({
                 map: createDynamicTexture(props.face6, props.width, props.height)
@@ -62,6 +64,4 @@ function createCube(props) {
     objects[cube.userData.id] = cube;
 
     scene.add(cube);
-
-    return cube;
 }
