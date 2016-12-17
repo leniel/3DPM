@@ -105,6 +105,8 @@ $(document).ready(function() {
         console.assert(cubeCount == 41, 'Wrong number of cubes added to the scene.');
         //console.table(objects);
 
+        createCriticalPath();
+
         document.addEventListener('mousedown', onDocumentMouseDown, false);
         document.addEventListener('touchstart', onDocumentTouchStart, false);
 

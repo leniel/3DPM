@@ -20,6 +20,7 @@ THREEx.DynamicTexture	= function(width, height){
 	this.context	= context
 	
 	var texture	= new THREE.Texture(canvas)
+    texture.minFilter = THREE.LinearFilter; // Gets rid of THREE.WebGLRenderer: Texture is not power of two.
 	this.texture	= texture
 }
 

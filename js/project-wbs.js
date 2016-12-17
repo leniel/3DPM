@@ -1,7 +1,26 @@
 
-function addCubeToScene(text, x, y, margin, lineHeight, width, height) {
+function addCubeToScene(text, x, y, margin, lineHeight, width, height, color, textColor) {
+
     // Only Face 5 is being used since it's the front facing one.
-    var props = { face5: { text: text, margin: margin, lineHeight: lineHeight }, x: x, y: y, width: width, height: height };
+    var props =
+        {
+            face1:
+            { margin: margin, lineHeight: lineHeight, color: color, textColor: textColor }, x: x, y: y, width: width, height: height,
+            face2: { margin: margin, lineHeight: lineHeight, color: color, textColor: textColor }, x: x, y: y, width: width, height: height
+            ,
+            face3:
+            { margin: margin, lineHeight: lineHeight, color: color, textColor: textColor }, x: x, y: y, width: width, height: height
+            ,
+            face4:
+            { margin: margin, lineHeight: lineHeight, color: color, textColor: textColor }, x: x, y: y, width: width, height: height
+            ,
+            face5:
+            { text: text, margin: margin, lineHeight: lineHeight, color: color, textColor: textColor }, x: x, y: y, width: width, height: height
+            ,
+            face6:
+            { margin: margin, lineHeight: lineHeight, color: color, textColor: textColor }, x: x, y: y, width: width, height: height
+
+        };
 
     createCube(props);
 }
@@ -31,18 +50,18 @@ function createProjectWorkBreakDownStructure() {
     addCubeToScene("Aquisições", initialX, initialY - 10 * verticalDelta, 0.1, 0.43);
 
     initialX = -465, horizontalDelta = 120;
-    addCubeToScene("  Divulgação do   Evento", initialX + horizontalDelta, initialY - 2*verticalDelta, 0.1, 0.30);
-    addCubeToScene("     Selecionar     Canais", initialX + 1.25* horizontalDelta, initialY - 3*verticalDelta, 0.1, 0.30);
-    addCubeToScene("Preparar Material de Divulgação", initialX + 1.25*horizontalDelta, initialY - 4*verticalDelta, 0.1, 0.30);
-    addCubeToScene("       Publicar       Candidatura", initialX + horizontalDelta, initialY - 5*verticalDelta, 0.1, 0.30);
-    addCubeToScene("Avaliar Perfis", initialX + horizontalDelta, initialY - 6*verticalDelta, 0.1, 0.43);
-    addCubeToScene("       Publicar       Lista Final", initialX + horizontalDelta, initialY - 7*verticalDelta, 0.1, 0.30);
+    addCubeToScene("  Divulgação do   Evento", initialX + horizontalDelta, initialY - 2 * verticalDelta, 0.1, 0.30);
+    addCubeToScene("     Selecionar     Canais", initialX + 1.25 * horizontalDelta, initialY - 3 * verticalDelta, 0.1, 0.30);
+    addCubeToScene("Preparar Material de Divulgação", initialX + 1.25 * horizontalDelta, initialY - 4 * verticalDelta, 0.1, 0.30);
+    addCubeToScene("       Publicar       Candidatura", initialX + horizontalDelta, initialY - 5 * verticalDelta, 0.1, 0.30);
+    addCubeToScene("Avaliar Perfis", initialX + horizontalDelta, initialY - 6 * verticalDelta, 0.1, 0.43);
+    addCubeToScene("       Publicar       Lista Final", initialX + horizontalDelta, initialY - 7 * verticalDelta, 0.1, 0.30);
 
     initialX = 0, horizontalDelta = 50
-    addCubeToScene("   Seleção do    Tema", initialX - 3.75 * horizontalDelta, initialY - 2*verticalDelta, 0.1, 0.30, 120);
-    addCubeToScene("   Estudo do     Tema", initialX - 0.75* horizontalDelta, initialY - 2*verticalDelta, 0.1, 0.30, 120);
-    addCubeToScene("     Elaborar     Discurso", initialX + 2.25*horizontalDelta, initialY - 2*verticalDelta, 0.1, 0.30, 120);
-    addCubeToScene("      Treinar     Participantes", initialX + 5.25*horizontalDelta, initialY - 2*verticalDelta, 0.1, 0.30, 120);
+    addCubeToScene("   Seleção do    Tema", initialX - 3.75 * horizontalDelta, initialY - 2 * verticalDelta, 0.1, 0.30, 120);
+    addCubeToScene("   Estudo do     Tema", initialX - 0.75 * horizontalDelta, initialY - 2 * verticalDelta, 0.1, 0.30, 120);
+    addCubeToScene("     Elaborar     Discurso", initialX + 2.25 * horizontalDelta, initialY - 2 * verticalDelta, 0.1, 0.30, 120);
+    addCubeToScene("      Treinar     Participantes", initialX + 5.25 * horizontalDelta, initialY - 2 * verticalDelta, 0.1, 0.30, 120);
 
     initialX = -115, initialY = 150;
     addCubeToScene("  Elencar Temas  Candidatos", initialX, initialY - 2 * verticalDelta, 0.1, 0.30);
@@ -55,20 +74,20 @@ function createProjectWorkBreakDownStructure() {
 
     initialX = 335, initialY = 50;
     addCubeToScene("Reunir Equipe", initialX, initialY - verticalDelta, 0.1, 0.43, 160);
-    addCubeToScene("Deslocamento", initialX, initialY - 2*verticalDelta, 0.1, 0.43, 160);
+    addCubeToScene("Deslocamento", initialX, initialY - 2 * verticalDelta, 0.1, 0.43, 160);
     addCubeToScene("Distribuir Estratégia de Abordagem", initialX, initialY - 3 * verticalDelta, 0.1, 0.30, 160);
     addCubeToScene("Abordar", initialX, initialY - 4 * verticalDelta, 0.1, 0.43, 160);
 
-    initialX = 560, initialY = 150;
+    initialX = 570, initialY = 150;
     addCubeToScene("   Desmobilizar    Equipe", initialX, initialY - verticalDelta, 0.1, 0.3);
-    addCubeToScene("Encerramento de    Contratos", initialX, initialY - 2*verticalDelta, 0.1, 0.3);
+    addCubeToScene("Encerramento de    Contratos", initialX, initialY - 2 * verticalDelta, 0.1, 0.3);
     addCubeToScene("Avaliar e Apresentar Resultados", initialX, initialY - 6 * verticalDelta, 0.1, 0.3, 160);
     addCubeToScene(" Registrar Lições   Aprendidas", initialX, initialY - 7 * verticalDelta, 0.1, 0.3);
 
     initialX = 530, initialY = -50;
     addCubeToScene("      Contatar       Fornecedor", initialX, initialY - verticalDelta, 0.09, 0.3);
-    addCubeToScene(" Elaborar Termo  de  Encerramento", initialX, initialY - 2*verticalDelta, 0.1, 0.3);
-    addCubeToScene("Colher Assinaturas", initialX, initialY - 3*verticalDelta, 0.08, 0.43);
+    addCubeToScene(" Elaborar Termo  de  Encerramento", initialX, initialY - 2 * verticalDelta, 0.1, 0.3);
+    addCubeToScene("Colher Assinaturas", initialX, initialY - 3 * verticalDelta, 0.08, 0.43);
 
     createLines();
 }
@@ -106,61 +125,61 @@ function createLines() {
     // Seleção de Participantes
     x1 = -435, y1 = 150, deltaY = 100;
     createLine("SelecaoParticipantes->Children", x1, y1, x1, -(y1 + 3 * deltaY));
-    createLine("SelecaoParticipantes->DivulgacaoEvento", x1, y1 - deltaY, x1+50, y1 - deltaY);
+    createLine("SelecaoParticipantes->DivulgacaoEvento", x1, y1 - deltaY, x1 + 50, y1 - deltaY);
     createLine("SelecaoParticipantes->PublicarCandidatura", x1, -y1 - deltaY, x1 + 50, -(y1 + deltaY));
-    createLine("SelecaoParticipantes->AvaliarPerfis", x1, -y1 - 2*deltaY, x1 +50, -(y1 + 2 * deltaY));
-    createLine("SelecaoParticipantes->PublicarListaFinal", x1, -y1 - 3*deltaY, x1+50, -(y1 + 3 * deltaY));
+    createLine("SelecaoParticipantes->AvaliarPerfis", x1, -y1 - 2 * deltaY, x1 + 50, -(y1 + 2 * deltaY));
+    createLine("SelecaoParticipantes->PublicarListaFinal", x1, -y1 - 3 * deltaY, x1 + 50, -(y1 + 3 * deltaY));
 
     // Divulgação do Evento
     x1 = -405;
-    createLine("DivulgacaoEvento->Children", x1, y1-deltaY, x1, -y1);
-    createLine("DivulgacaoEvento->SelecionarCanais", x1, y1-2*deltaY, x1 + 50, -y1+deltaY);
-    createLine("DivulgacaoEvento->PrepararMaterialDivulgacao", x1, y1-3*deltaY, x1 + 50, -y1);
+    createLine("DivulgacaoEvento->Children", x1, y1 - deltaY, x1, -y1);
+    createLine("DivulgacaoEvento->SelecionarCanais", x1, y1 - 2 * deltaY, x1 + 50, -y1 + deltaY);
+    createLine("DivulgacaoEvento->PrepararMaterialDivulgacao", x1, y1 - 3 * deltaY, x1 + 50, -y1);
 
     // Discurso
     var x1 = 185, y1 = 100; y2 = 50, deltaY = 100, deltaX = 150;
-    createLine("Discurso->Children", x1+80, y1, -x1, y1);
-    createLine("DiscursoVertical", x1 - x1, y1, x1-x1, y1+50);
+    createLine("Discurso->Children", x1 + 80, y1, -x1, y1);
+    createLine("DiscursoVertical", x1 - x1, y1, x1 - x1, y1 + 50);
     createLine("Discurso->SelecaoTema", -x1, y1, -x1, y2);
     createLine("Discurso->EstudoTema", -x1 + deltaX, y1, -x1 + deltaX, y2);
-    createLine("Discurso->ElaborarDiscurso", -x1 + 2*deltaX, y1, -x1 + 2*deltaX, y2);
-    createLine("Discurso->TreinarParticipantes", -x1 +3*deltaX, y1, -x1 +3*deltaX, y2);
+    createLine("Discurso->ElaborarDiscurso", -x1 + 2 * deltaX, y1, -x1 + 2 * deltaX, y2);
+    createLine("Discurso->TreinarParticipantes", -x1 + 3 * deltaX, y1, -x1 + 3 * deltaX, y2);
 
     // Seleção do Tema
     x1 = -205, y1 = 50; x2 = -205, y2 = -250, deltaY = 100, deltaX = 150;
     createLine("SelecaoTema->Children", x1, y1, x2, y2);
-    createLine("SelecaoTema->ElencarTemasCandidatos", x1, y1-deltaY, x1 + 50, y1-deltaY);
-    createLine("SelecaoTema->AvaliarImpactorTemas", x1, y1-2*deltaY, x1 + 50, y1-2*deltaY);
-    createLine("SelecaoTema->EscolherTemaMaiorImpacto", x1, y1-3*deltaY, x1 + 50, y1-3*deltaY);
+    createLine("SelecaoTema->ElencarTemasCandidatos", x1, y1 - deltaY, x1 + 50, y1 - deltaY);
+    createLine("SelecaoTema->AvaliarImpactorTemas", x1, y1 - 2 * deltaY, x1 + 50, y1 - 2 * deltaY);
+    createLine("SelecaoTema->EscolherTemaMaiorImpacto", x1, y1 - 3 * deltaY, x1 + 50, y1 - 3 * deltaY);
 
     // Estudo do Tema
     x1 = 0, y1 = 50; x2 = 0, y2 = -150, deltaY = 100, deltaX = 150;
     createLine("EstudoTema->Children", x1, y1, x2, y2);
-    createLine("EstudoTema->LevantarBibliografia", x1, y1-deltaY, x1 + 50, y1-deltaY);
-    createLine("EstudoTema->CompilarMaterial", x1, y1-2*deltaY, x1 + 50, y1-2*deltaY);
+    createLine("EstudoTema->LevantarBibliografia", x1, y1 - deltaY, x1 + 50, y1 - deltaY);
+    createLine("EstudoTema->CompilarMaterial", x1, y1 - 2 * deltaY, x1 + 50, y1 - 2 * deltaY);
 
     // Mobilização
     x1 = 435, y1 = 150; x2 = 435, y2 = -350, deltaY = 100, deltaX = 150;
     createLine("Mobilizacao->Children", x1, y1, x2, y2);
-    createLine("Mobilizacao->ReunirEquipe", x1, y1-2*deltaY, x1 -50, y1-2*deltaY);
-    createLine("Mobilizacao->Deslocamento", x1, y1-3*deltaY, x1 -50, y1-3*deltaY);
-    createLine("Mobilizacao->DistribuirEstrategiaAbordagem", x1, y1-4*deltaY, x1 -50, y1-4*deltaY);
-    createLine("Mobilizacao->Abordar", x1, y1-5*deltaY, x1 -50, y1-5*deltaY);
+    createLine("Mobilizacao->ReunirEquipe", x1, y1 - 2 * deltaY, x1 - 50, y1 - 2 * deltaY);
+    createLine("Mobilizacao->Deslocamento", x1, y1 - 3 * deltaY, x1 - 50, y1 - 3 * deltaY);
+    createLine("Mobilizacao->DistribuirEstrategiaAbordagem", x1, y1 - 4 * deltaY, x1 - 50, y1 - 4 * deltaY);
+    createLine("Mobilizacao->Abordar", x1, y1 - 5 * deltaY, x1 - 50, y1 - 5 * deltaY);
 
     // Encerramento
     x1 = 660, y1 = 150, deltaY = 100;
     createLine("Encerramento->Children", x1, y1, x1, -(y1 + 4 * deltaY));
-    createLine("Encerramento->DesmobilizarEquipe", x1, y1 - deltaY, x1-50, y1 - deltaY);
-    createLine("Encerramento->EncerramentoContratos", x1, y1 - 2*deltaY, x1-50, y1 -2*deltaY);
-    createLine("Encerramento->AvaliarApresentarResultados", x1, -y1 - 3*deltaY, x1 -50, -(y1 + 3 * deltaY));
-    createLine("Encerramento->RegistrarLicoesAprendidas", x1, -y1 - 4*deltaY, x1-50, -(y1 + 4 * deltaY));
+    createLine("Encerramento->DesmobilizarEquipe", x1, y1 - deltaY, x1 - 50, y1 - deltaY);
+    createLine("Encerramento->EncerramentoContratos", x1, y1 - 2 * deltaY, x1 - 50, y1 - 2 * deltaY);
+    createLine("Encerramento->AvaliarApresentarResultados", x1, -y1 - 3 * deltaY, x1 - 50, -(y1 + 3 * deltaY));
+    createLine("Encerramento->RegistrarLicoesAprendidas", x1, -y1 - 4 * deltaY, x1 - 50, -(y1 + 4 * deltaY));
 
     // Encerramento de Contratos
     x1 = 620, y1 = -50, deltaY = -100;
     createLine("EncerramentoContratos->Children", x1, y1, x1, 3.5 * deltaY);
-    createLine("EncerramentoContratos->ContatarFornecedor", x1, y1 + deltaY, x1-50, y1 + deltaY);
-    createLine("EncerramentoContratos->ElaborarTermoEncerramento", x1, y1 + 2*deltaY, x1-50, y1 + 2*deltaY);
-    createLine("EncerramentoContratos->ColherAssinaturas", x1, y1 + 3*deltaY, x1-50, y1 + 3*deltaY);
+    createLine("EncerramentoContratos->ContatarFornecedor", x1, y1 + deltaY, x1 - 50, y1 + deltaY);
+    createLine("EncerramentoContratos->ElaborarTermoEncerramento", x1, y1 + 2 * deltaY, x1 - 50, y1 + 2 * deltaY);
+    createLine("EncerramentoContratos->ColherAssinaturas", x1, y1 + 3 * deltaY, x1 - 50, y1 + 3 * deltaY);
 }
 
 function createLine(name, x1, y1, x2, y2) {
@@ -179,4 +198,39 @@ function createLine(name, x1, y1, x2, y2) {
     line.name = name;
 
     scene.add(line);
+}
+
+
+function createCriticalPath() {
+
+    // Selecting a possible Critical Path...
+    var criticalPath = objects.filter(function (cube, i, array) {
+        return array.indexOf(cube) === 1 ||
+            array.indexOf(cube) === 3 ||
+            array.indexOf(cube) === 16 ||
+            array.indexOf(cube) === 17
+    });
+
+    criticalPath.forEach(function (cube) {
+
+        var props = cube.userData.props; // Retrieving the properties that were used to create this cube...
+
+        for (var prop in props) {
+
+            // If the property is an object like face1, face2, face3, face4, face5 or face6
+            if (isObject(props[prop])) {
+
+                props[prop].color = '#CC0000'; // Changing the color to Red
+            }
+        }
+
+        scene.remove(cube); // Removing the "old" cube 
+        //console.log(scene.children.length)
+
+        createCube(props); // Recreating the cube with a new color       
+    });
+}
+
+function isObject(val) {
+    return val instanceof Object;
 }
