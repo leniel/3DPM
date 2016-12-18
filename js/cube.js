@@ -1,6 +1,16 @@
 function createDynamicTexture(props, width, height) {
 
-    var dynamicTexture = new THREEx.DynamicTexture(width ? width : 140, height ? height : 60)
+    var dynamicTexture;
+
+    if(props.width || props.height)
+    {
+        dynamicTexture = new THREEx.DynamicTexture(props.width, props.height)
+    }
+    else
+    {
+        dynamicTexture = new THREEx.DynamicTexture(width ? width : 140, height ? height : 60)
+    }
+    
     dynamicTexture.clear('#1874CD');
 
     if (props) {
@@ -77,6 +87,4 @@ function createCube(props) {
     var mat = new THREE.LineBasicMaterial({ color: 'white', linewidth: 2 });
     var wireframe = new THREE.LineSegments(geo, mat);
     cube.add(wireframe);
-
-    return cube;
 }

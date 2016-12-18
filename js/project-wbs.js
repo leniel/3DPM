@@ -57,18 +57,18 @@ function createProjectWorkBreakDownStructure() {
     addCubeToScene("Avaliar Perfis", initialX + horizontalDelta, initialY - 6 * verticalDelta, 0.1, 0.43);
     addCubeToScene("       Publicar       Lista Final", initialX + horizontalDelta, initialY - 7 * verticalDelta, 0.1, 0.30);
 
-    initialX = 0, horizontalDelta = 50
+    initialX = 45, horizontalDelta = 50
     addCubeToScene("   Seleção do    Tema", initialX - 3.75 * horizontalDelta, initialY - 2 * verticalDelta, 0.1, 0.30, 120);
     addCubeToScene("   Estudo do     Tema", initialX - 0.75 * horizontalDelta, initialY - 2 * verticalDelta, 0.1, 0.30, 120);
     addCubeToScene("     Elaborar     Discurso", initialX + 2.25 * horizontalDelta, initialY - 2 * verticalDelta, 0.1, 0.30, 120);
     addCubeToScene("      Treinar     Participantes", initialX + 5.25 * horizontalDelta, initialY - 2 * verticalDelta, 0.1, 0.30, 120);
 
-    initialX = -95, initialY = 100;
+    initialX = -50, initialY = 100;
     addCubeToScene("  Elencar Temas  Candidatos", initialX, initialY - 2 * verticalDelta, 0.1, 0.30);
     addCubeToScene(" Avaliar Impacto dos Temas", initialX, initialY - 3 * verticalDelta, 0.1, 0.30);
     addCubeToScene("   Escolher Tema de Maior Impacto", initialX, initialY - 4 * verticalDelta, 0.1, 0.30);
 
-    initialX = 90
+    initialX = 135
     addCubeToScene("      Levantar      Bibliografia", initialX, initialY - 2 * verticalDelta, 0.1, 0.30);
     addCubeToScene("Compilar Material", initialX, initialY - 3 * verticalDelta, 0.1, 0.43);
 
@@ -81,7 +81,7 @@ function createProjectWorkBreakDownStructure() {
     initialX = 570, initialY = 100;
     addCubeToScene("   Desmobilizar    Equipe", initialX, initialY - verticalDelta, 0.1, 0.3);
     addCubeToScene("Encerramento de    Contratos", initialX, initialY - 2 * verticalDelta, 0.1, 0.3);
-    addCubeToScene("Avaliar e Apresentar Resultados", initialX-10, initialY - 6 * verticalDelta, 0.1, 0.3, 160);
+    addCubeToScene("Avaliar e Apresentar Resultados", initialX - 10, initialY - 6 * verticalDelta, 0.1, 0.3, 160);
     addCubeToScene(" Registrar Lições   Aprendidas", initialX, initialY - 7 * verticalDelta, 0.1, 0.3);
 
     initialX = 530, initialY = -200;
@@ -109,7 +109,7 @@ function createLines() {
     createLine("DiaDoar->Encerramento", x1, deltaY, x1, y2);
 
     // Gestão de Projeto
-    var x1 = -660, x2 = -605; y1 = 100
+    var x1 = -660, x2 = -605; y1 = 100;
     createLine("GestaoProjeto->Vertical", x1, y1, x1, -12.5 * y1);
     createLine("GestaoProjeto->Integracao", x1, -deltaY + y1 / 2, x2, -deltaY + y1 / 2);
     createLine("GestaoProjeto->Escopo", x1, -2 * deltaY, x2, -2 * deltaY);
@@ -130,55 +130,55 @@ function createLines() {
     createLine("SelecaoParticipantes->PublicarListaFinal", x1, -8 * deltaY, x2, -8 * deltaY);
 
     // Divulgação do Evento
-    x1 = -405,  y1 = -50, x2 = -380
-    createLine("DivulgacaoEvento->Vertical", x1, y1, x1, 7*y1);
+    x1 = -405, y1 = -50, x2 = -380;
+    createLine("DivulgacaoEvento->Vertical", x1, y1, x1, 7 * y1);
     createLine("DivulgacaoEvento->SelecionarCanais", x1, y1 - 1.5 * deltaY, x2, y1 - 1.5 * deltaY);
     createLine("DivulgacaoEvento->PrepararMaterialDivulgacao", x1, y1 - 3 * deltaY, x2, y1 - 3 * deltaY);
 
     // Discurso
-    var x1 = -185, y1 = 25; x2 = 265, deltaX = 150;
+    x1 = -140, y1 = 25; x2 = 310, deltaX = 150;
     createLine("Discurso->Horizontal", x1, y1, x2, y1);
     createLine("Discurso->Vertical", x1 - x1, y1, x1 - x1, y1 + 50);
     createLine("Discurso->SelecaoTema", x1, y1 - deltaY, x1, y1);
     createLine("Discurso->EstudoTema", x1 + deltaX, y1 - deltaY, x1 + deltaX, y1);
-    createLine("Discurso->ElaborarDiscurso", x1 + 2 * deltaX, y1 -deltaY, x1 + 2 * deltaX, y1);
-    createLine("Discurso->TreinarParticipantes", x1 + 3 * deltaX, y1 -deltaY, x1 + 3 * deltaX, y1);
+    createLine("Discurso->ElaborarDiscurso", x1 + 2 * deltaX, y1 - deltaY, x1 + 2 * deltaX, y1);
+    createLine("Discurso->TreinarParticipantes", x1 + 3 * deltaX, y1 - deltaY, x1 + 3 * deltaX, y1);
 
     // Seleção do Tema
-    y2 = -500
+    x1 = -140, y1 = -50, y2 = -500;
     createLine("SelecaoTema->Vertical", x1, y1, x1, y2);
-    createLine("SelecaoTema->ElencarTemasCandidatos", x1, - 2 * deltaY, x1/2, - 2 * deltaY);
-    createLine("SelecaoTema->AvaliarImpactorTemas",x1, - 3.5 * deltaY, x1/2, - 3.5 * deltaY);
-    createLine("SelecaoTema->EscolherTemaMaiorImpacto", x1, - 5 * deltaY, x1/2, - 5 * deltaY);
+    createLine("SelecaoTema->ElencarTemasCandidatos", x1, - 2 * deltaY, x1 / 2, - 2 * deltaY);
+    createLine("SelecaoTema->AvaliarImpactorTemas", x1, - 3.5 * deltaY, x1 / 2, - 3.5 * deltaY);
+    createLine("SelecaoTema->EscolherTemaMaiorImpacto", x1, - 5 * deltaY, x1 / 2, - 5 * deltaY);
 
     // Estudo do Tema
-    x1 = 0, y1 = -50; y2 = -350
+    x1 = 45, y1 = -50; y2 = -350;
     createLine("EstudoTema->Vertical", x1, y1, x1, y2);
-    createLine("EstudoTema->LevantarBibliografia", x1, - 2 * deltaY, x2/2, - 2 * deltaY);
-    createLine("EstudoTema->CompilarMaterial", x1, - 3.5 * deltaY, x2/2, - 3.5 * deltaY);
+    createLine("EstudoTema->LevantarBibliografia", x1, - 2 * deltaY, x2 / 2, - 2 * deltaY);
+    createLine("EstudoTema->CompilarMaterial", x1, - 3.5 * deltaY, x2 / 2, - 3.5 * deltaY);
 
     // Mobilização
-    x1 = 435, y1 = 100; y2 = -650
+    x1 = 435, y1 = 100; y2 = -650;
     createLine("Mobilizacao->Vertical", x1, y1, x1, y2);
     createLine("Mobilizacao->ReunirEquipe", x1, - 2 * deltaY, x1 - 50, - 2 * deltaY);
     createLine("Mobilizacao->Deslocamento", x1, - 3.5 * deltaY, x1 - 50, - 3.5 * deltaY);
-    createLine("Mobilizacao->DistribuirEstrategiaAbordagem",  x1, - 5 * deltaY, x1 - 50, - 5 * deltaY);
-    createLine("Mobilizacao->Abordar",  x1, - 6.5 * deltaY, x1 - 50, - 6.5 * deltaY);
+    createLine("Mobilizacao->DistribuirEstrategiaAbordagem", x1, - 5 * deltaY, x1 - 50, - 5 * deltaY);
+    createLine("Mobilizacao->Abordar", x1, - 6.5 * deltaY, x1 - 50, - 6.5 * deltaY);
 
     // Encerramento
-    x1 = 660, y1 = 100, y2 = -950
+    x1 = 660, y1 = 100, y2 = -950;
     createLine("Encerramento->Vertical", x1, y1, x1, y2);
-    createLine("Encerramento->DesmobilizarEquipe", x1, -0.5*deltaY, x1 - 50, -0.5*deltaY);
-    createLine("Encerramento->EncerramentoContratos", x1, -2*deltaY, x1 - 50, -2*deltaY);
-    createLine("Encerramento->AvaliarApresentarResultados", x1, -8*deltaY, x1 - 50, -8*deltaY);
-    createLine("Encerramento->RegistrarLicoesAprendidas", x1, -9.5*deltaY, x1 - 50, -9.5*deltaY);
+    createLine("Encerramento->DesmobilizarEquipe", x1, -0.5 * deltaY, x1 - 50, -0.5 * deltaY);
+    createLine("Encerramento->EncerramentoContratos", x1, -2 * deltaY, x1 - 50, -2 * deltaY);
+    createLine("Encerramento->AvaliarApresentarResultados", x1, -8 * deltaY, x1 - 50, -8 * deltaY);
+    createLine("Encerramento->RegistrarLicoesAprendidas", x1, -9.5 * deltaY, x1 - 50, -9.5 * deltaY);
 
     // Encerramento de Contratos
-    x1 = 620, y1 = -200, y2 = -650
+    x1 = 620, y1 = -200, y2 = -650;
     createLine("EncerramentoContratos->Vertical", x1, y1, x1, y2);
-    createLine("EncerramentoContratos->ContatarFornecedor", x1, -3.5*deltaY, x1 - 50, -3.5*deltaY);
-    createLine("EncerramentoContratos->ElaborarTermoEncerramento", x1, -5*deltaY, x1 - 50, -5*deltaY);
-    createLine("EncerramentoContratos->ColherAssinaturas", x1, -6.5*deltaY, x1 - 50, -6.5*deltaY);
+    createLine("EncerramentoContratos->ContatarFornecedor", x1, -3.5 * deltaY, x1 - 50, -3.5 * deltaY);
+    createLine("EncerramentoContratos->ElaborarTermoEncerramento", x1, -5 * deltaY, x1 - 50, -5 * deltaY);
+    createLine("EncerramentoContratos->ColherAssinaturas", x1, -6.5 * deltaY, x1 - 50, -6.5 * deltaY);
 }
 
 function createLine(name, x1, y1, x2, y2) {
@@ -230,11 +230,21 @@ function paintCriticalPathRed() {
 }
 
 function addExtraCubes(cubes) {
-    
+
     var lastCube = cubes.pop();
 
     var props = paintCube(lastCube, "#FFE135");
 
+    // Time
+    props["face1"].text = props["face2"].text = props["face3"].text =
+    props["face4"].text = props["face5"].text = props["face6"].text = "4 dias a mais";
+    props["face1"].textColor =  props["face2"].textColor =  props["face3"].textColor =
+    props["face4"].textColor =  props["face5"].textColor =  props["face6"].textColor = "black";
+    props["face1"].lineHeight = props["face2"].lineHeight = props["face3"].lineHeight = 
+    props["face4"].lineHeight = props["face5"].lineHeight = props["face6"].lineHeight = 0.5;
+    props["face3"].text = "Tempo";
+    props["face3"].margin = .1;
+    
     props.x = lastCube.position.x;
     props.y = lastCube.position.y + 53;
     props.z = lastCube.position.z - 43;
@@ -242,16 +252,30 @@ function addExtraCubes(cubes) {
     props.height = 40;
     props.depth = 165;
 
-    var timeCube = createCube(props);
+    createCube(props);
 
-    props.x = lastCube.position.x + 30;
+    // Cost
+    props["face1"].text = props["face2"].text = props["face3"].text =
+    props["face4"].text = props["face5"].text = props["face6"].text = "      R$ 215,00       a mais";
+    props["face1"].textColor =  props["face2"].textColor =  props["face3"].textColor =
+    props["face4"].textColor =  props["face5"].textColor =  props["face6"].textColor = "black";
+    props["face1"].lineHeight = props["face2"].lineHeight = props["face3"].lineHeight = 
+    props["face4"].lineHeight = props["face5"].lineHeight = props["face6"].lineHeight = 0.35;
+    // props["face3"].height = 60;
+    // props["face3"].width = 100;
+    props["face3"].text = "Custo";
+    props["face3"].lineHeight = 0.5;
+    //props["face3"].align = "right";
+    props["face3"].margin = 0;
+
+    props.x = lastCube.position.x + 120;
     props.y = lastCube.position.y;
     props.z = lastCube.position.z - 85;
 
     props.height = 60;
     props.depth = 80;
 
-    var costCube = createCube(props);
+    createCube(props);
 }
 
 function paintCube(cube, color) {
