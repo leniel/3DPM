@@ -29,35 +29,40 @@ var objects = [];
 function createCube(props) {
 
     var cubeGeometry =
-    new THREE.CubeGeometry(props.width ? props.width : 140, props.height ? props.height : 60, props.depth ? props.depth : 80); //x, y, z
+        new THREE.CubeGeometry(props.width ? props.width : 140, props.height ? props.height : 60, props.depth ? props.depth : 80); //x, y, z
 
     // One MeshBasicMaterial for each of the 6 cube faces
     var cubeMaterial = new THREE.MultiMaterial(
         [
             new THREE.MeshBasicMaterial({
-                map: createDynamicTexture(props.face1, props.width, props.height)
+                map: createDynamicTexture(props.face1, props.width, props.height),
+                //wireframe: true
             }),
             new THREE.MeshBasicMaterial({
-                map: createDynamicTexture(props.face2, props.width, props.height)
+                map: createDynamicTexture(props.face2, props.width, props.height),
+                //wireframe: true
             }),
             new THREE.MeshBasicMaterial({
-                map: createDynamicTexture(props.face3, props.width, props.height)
+                map: createDynamicTexture(props.face3, props.width, props.height),
+                //wireframe: true
             }),
             new THREE.MeshBasicMaterial({
-                map: createDynamicTexture(props.face4, props.width, props.height)
+                map: createDynamicTexture(props.face4, props.width, props.height),
+                //wireframe: true
             }),
             new THREE.MeshBasicMaterial({
                 map: createDynamicTexture(props.face5, props.width, props.height),
                 //wireframe: true
             }),
             new THREE.MeshBasicMaterial({
-                map: createDynamicTexture(props.face6, props.width, props.height)
+                map: createDynamicTexture(props.face6, props.width, props.height),
+                //wireframe: true
             })
         ]);
 
     var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 
-    cube.position.set(props.x, props.y, 0);
+    cube.position.set(props.x, props.y, props.z ? props.z : 0);
 
     cube.name = props.face5.text;
     cube.userData.id = ++cubeCount;
@@ -68,8 +73,10 @@ function createCube(props) {
 
     // wireframe\border\outline
     // http://stackoverflow.com/a/31541369/114029
-    var geo = new THREE.EdgesGeometry( cube.geometry ); // or WireframeGeometry
-    var mat = new THREE.LineBasicMaterial( { color: 'white', linewidth: 2 } );
-    var wireframe = new THREE.LineSegments( geo, mat );
+    var geo = new THREE.EdgesGeometry(cube.geometry); // or WireframeGeometry
+    var mat = new THREE.LineBasicMaterial({ color: 'white', linewidth: 2 });
+    var wireframe = new THREE.LineSegments(geo, mat);
     cube.add(wireframe);
+
+    return cube;
 }
