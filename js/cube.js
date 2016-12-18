@@ -1,3 +1,8 @@
+/**
+ * @author Leniel Macaferi <leniel@gmail.com>
+ * 2016-12-18
+ */
+
 function createDynamicTexture(props, width, height) {
 
     var dynamicTexture;

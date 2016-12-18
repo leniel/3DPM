@@ -1,3 +1,7 @@
+/**
+ * @author Leniel Macaferi <leniel@gmail.com>
+ * 2016-12-18
+ */
 
 function addCubeToScene(text, x, y, margin, lineHeight, width, height, color, textColor) {
 
