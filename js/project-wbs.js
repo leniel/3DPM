@@ -238,7 +238,7 @@ function paintCriticalPathRed() {
 
     // Linkifying the the last cube...
     // https://github.com/jeromeetienne/threex.domevents
-    var url = '/package-activities.html?packageid=A2D5F0030'
+    var url = 'package-activities.html?packageid=A2D5F0030'
     THREEx.Linkify(domEvents, newCubes.pop(), url)
 
     return criticalPath;

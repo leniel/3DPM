@@ -1,0 +1,23 @@
+DONE Leniel, a estrutura está legal. Coloque os nomes sem acentos e sem cedilhas, pois sai tudo bagunçado na minha tela
+
+DONE outra coisa, quando clico na face do cubo não acontece nada, nem muda de cor
+
+DONE você está no caminho certo, mas ao invés de mudar a cor do cubo ao clicar na face, escolha aquela sequencia de cubos que está no último slide, são 4 cubos e pinte-os de vermelho
+
+DONE aí só vai ficar faltando colocar dois cubos extras no cubo  "Selecionar Canais" como no último slide
+
+DONE não precisa fazer dois wbs, um grande e um pequeno
+
+DONE basta pintar os 4 que eu selecionei na estrutura principal
+
+DONE no cubo do último nível que está em vermelho você adiciona um cubo em cima e outro no fundo para indicar que estourou tempo e custo
+
+DONE nestes cubos extras coloque os seguintes textos: "4 Dias a mais" para o cubo extra da data e "R$ 215,00 a mais"
+
+DONE veja se você consegue colocar ou fazer aparecer em outra cor as arestas dos cubos, pode ser na cor branca, pois quando movimentamos o cubo, a visualização sem as arestas fica dificultada.
+
+DONE você consegue programar o evento de clique de mouse sobre um cubo?
+
+DONE se for possível e se der tempo, somente para o cubo que vai receber os dois cubos extras, abrir uma  nova aba com os dados daquele cubo, ou seja daquele pacote de trabalho
+
+DONE ou seja quando der duplo clique ou clique no cubo vermelho do último nível você abre uma nova aba com as informações do pacote de trabalho que está no arquivo que te enviei com o script de criação de tabelas e inserts oracle
