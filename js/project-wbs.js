@@ -216,6 +216,8 @@ function paintCriticalPathRed() {
             array.indexOf(cube) === 17
     });
 
+    var newCubes = [];
+
     criticalPath.forEach(function (cube) {
 
         var props = paintCube(cube, '#CC0000');
@@ -223,8 +225,17 @@ function paintCriticalPathRed() {
         scene.remove(cube); // Removing the "old" cube 
         //console.log(scene.children.length)
 
-        createCube(props); // Recreating the cube with a new color       
+        var cube = createCube(props); // Recreating the cube with a new color 
+
+        newCubes.push(cube);
     });
+
+    debugger;
+
+    // Linkifying the the last cube...
+    // https://github.com/jeromeetienne/threex.domevents
+    var url = '/package-activities.html?packageid=A2D5F0030'
+    THREEx.Linkify(domEvents, newCubes.pop(), url)
 
     return criticalPath;
 }
@@ -237,14 +248,14 @@ function addExtraCubes(cubes) {
 
     // Time
     props["face1"].text = props["face2"].text = props["face3"].text =
-    props["face4"].text = props["face5"].text = props["face6"].text = "4 dias a mais";
-    props["face1"].textColor =  props["face2"].textColor =  props["face3"].textColor =
-    props["face4"].textColor =  props["face5"].textColor =  props["face6"].textColor = "black";
-    props["face1"].lineHeight = props["face2"].lineHeight = props["face3"].lineHeight = 
-    props["face4"].lineHeight = props["face5"].lineHeight = props["face6"].lineHeight = 0.5;
+        props["face4"].text = props["face5"].text = props["face6"].text = "4 dias a mais";
+    props["face1"].textColor = props["face2"].textColor = props["face3"].textColor =
+        props["face4"].textColor = props["face5"].textColor = props["face6"].textColor = "black";
+    props["face1"].lineHeight = props["face2"].lineHeight = props["face3"].lineHeight =
+        props["face4"].lineHeight = props["face5"].lineHeight = props["face6"].lineHeight = 0.5;
     props["face3"].text = "Tempo";
     props["face3"].margin = .1;
-    
+
     props.x = lastCube.position.x;
     props.y = lastCube.position.y + 53;
     props.z = lastCube.position.z - 43;
@@ -256,11 +267,11 @@ function addExtraCubes(cubes) {
 
     // Cost
     props["face1"].text = props["face2"].text = props["face3"].text =
-    props["face4"].text = props["face5"].text = props["face6"].text = "      R$ 215,00       a mais";
-    props["face1"].textColor =  props["face2"].textColor =  props["face3"].textColor =
-    props["face4"].textColor =  props["face5"].textColor =  props["face6"].textColor = "black";
-    props["face1"].lineHeight = props["face2"].lineHeight = props["face3"].lineHeight = 
-    props["face4"].lineHeight = props["face5"].lineHeight = props["face6"].lineHeight = 0.35;
+        props["face4"].text = props["face5"].text = props["face6"].text = "      R$ 160,00       a mais";
+    props["face1"].textColor = props["face2"].textColor = props["face3"].textColor =
+        props["face4"].textColor = props["face5"].textColor = props["face6"].textColor = "black";
+    props["face1"].lineHeight = props["face2"].lineHeight = props["face3"].lineHeight =
+        props["face4"].lineHeight = props["face5"].lineHeight = props["face6"].lineHeight = 0.35;
     // props["face3"].height = 60;
     // props["face3"].width = 100;
     props["face3"].text = "Custo";

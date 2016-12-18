@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-<meta charset="utf-8"/>
+<html>
 
 <head>
     <title>3D Project Management | UFRJ - Universidade Federal do Rio de Janeiro</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8" />
     <!--<link href="https://fonts.googleapis.com/css?family=Lato:400,700,700italic,400italic,300,300italic" rel="stylesheet" type="text/css">-->
     <link rel=stylesheet href="css/jquery-ui.min.css" />
     <link rel=stylesheet href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
@@ -16,6 +17,8 @@
     <script src="js/stats.js"></script>
     <script src="js/orbitcontrols.js"></script>
     <script src="js/threex.dynamictexture.js"></script>
+    <script src="js/threex.domevents.js"></script>
+    <script src="js/threex.linkify.js"></script>
     <script src="js/cube.js"></script>
     <script src="js/project-wbs.js"></script>
 </head>
@@ -25,16 +28,15 @@
     <div id="infoBox" title="3D Project Management - Project Information">
         This Three.js project is the final work for the Master's degree Software Engineering Laboratory discipline at UFRJ - Federal
         University of Rio Janeiro under the supervision of teachers:<br>
-            <a href="http://www.gta.ufrj.br/~susie/" target="_blank">Claudia Susie Camargo Rodrigues</a><br>
-            <a href="http://www.cos.ufrj.br/~werner/" target="_blank">Claudia Maria Lima Werner</a><br>
-            Date: 2016-12-19<br> Source code available @: <a href="https://github.com/leniel/3DPM" target="_blank">
+        <a href="http://www.gta.ufrj.br/~susie/" target="_blank">Claudia Susie Camargo Rodrigues</a><br>
+        <a href="http://www.cos.ufrj.br/~werner/" target="_blank">Claudia Maria Lima Werner</a><br> Date: 2016-12-19<br>        Source code available @: <a href="https://github.com/leniel/3DPM" target="_blank">
             https://github.com/leniel/3DPM</a>
     </div>
     <div id="title">
         <h1>3D Project Management - Demo</h1>
         <i>by <a href="http://www.leniel.net" target="_blank">Leniel Macaferi</a> & Dáve Liao</i>
-        <p>Play with the scene using your mouse or 
-        keyboard</p>
+        <p>Play with the scene using your mouse or keyboard
+        </p>
         <i class="fa fa-refresh fa-2x" aria-hidden="true" title="Reset camera"></i>
     </div>
     <div id="stats"></div>
@@ -44,16 +46,20 @@
 
 <script type="text/javascript">
 
-$(document).ready(function() {
-    $(".fa-refresh").click(function(){
-        controls.reset(); // Resetting the camera
-    }); 
-});
+    String.prototype.contains = function (segment) { return this.indexOf(segment) !== -1; };
+
+    $(document).ready(function () {
+        $(".fa-refresh").click(function () {
+            controls.reset(); // Resetting the camera
+        });
+    });
 
     var stats;
     var camera, scene, renderer;
     var rayCaster;
     var mouse;
+
+    var domEvents;
 
     var canvas = document.getElementById("canvas")
 
@@ -95,6 +101,9 @@ $(document).ready(function() {
         camera.lookAt(scene.position);
         scene.add(camera);
 
+        // https://github.com/jeromeetienne/threex.domevents
+        domEvents = new THREEx.DomEvents(camera, renderer.domElement)
+
         var light = new THREE.AmbientLight(0xffffff, 0.1);
         camera.add(light);
 
@@ -107,7 +116,9 @@ $(document).ready(function() {
 
         createCriticalPath();
 
-        document.addEventListener('mousedown', onDocumentMouseDown, false);
+        //document.addEventListener('mousedown', onDocumentMouseDown, false);
+        // When the mouse moves let's call the given function...
+        //document.addEventListener('mousemove', onDocumentMouseMove, false);
         document.addEventListener('touchstart', onDocumentTouchStart, false);
 
         window.addEventListener('resize', onWindowResize, false);
@@ -149,27 +160,43 @@ $(document).ready(function() {
 
     function onDocumentMouseDown(e) {
 
-        // e.preventDefault();
+        e.preventDefault();
 
-        // mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
-        // mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
+        mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
+        mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
 
-        // rayCaster.setFromCamera(mouse, camera);
+        rayCaster.setFromCamera(mouse, camera);
 
-        // var intersects = rayCaster.intersectObjects(scene.children, true);
+        var intersects = rayCaster.intersectObjects(scene.children, true);
 
-        // if (intersects.length > 0) {
+        if (intersects.length > 0) {
 
-        //     console.log(intersects[0].object.name);
+            var object = intersects[0].object;
 
-        //     var cubeFaceIndex = intersects[0].face.materialIndex; // Getting which face was clicked...
+            //console.log(object.name);
 
-        //     changeDynamicTexture(intersects[0].object, cubeFaceIndex, {
-        //         color: 'orange',
-        //         text: '1',
-        //         textColor: 'yellow'
-        //     });
-        // }
+            debugger;
+
+            // Only if the cube clicked was the "Solicitar Canais" one...
+            if (object.name.contains("Canais")) {
+                $('html,body').css('cursor', 'crosshair');
+            }
+
+            //if(intersects[0].type === "")
+
+            // var cubeFaceIndex = intersects[0].face.materialIndex; // Getting which face was clicked...
+
+            // changeDynamicTexture(intersects[0].object, cubeFaceIndex, {
+            //     color: 'orange',
+            //     text: '1',
+            //     textColor: 'yellow'
+            // });
+        }
+    }
+
+    function onDocumentMouseMove(e) {
+
+
     }
 
 </script>
