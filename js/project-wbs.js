@@ -248,13 +248,13 @@ function addExtraCubes(cubes) {
 
     var lastCube = cubes.pop();
 
-    var props = paintCube(lastCube, "#FFE135");
+    var props = paintCube(lastCube, "green");
 
     // Time
     props["face1"].text = props["face2"].text = props["face3"].text =
         props["face4"].text = props["face5"].text = props["face6"].text = "4 dias a mais";
     props["face1"].textColor = props["face2"].textColor = props["face3"].textColor =
-        props["face4"].textColor = props["face5"].textColor = props["face6"].textColor = "black";
+        props["face4"].textColor = props["face5"].textColor = props["face6"].textColor = "white";
     props["face1"].lineHeight = props["face2"].lineHeight = props["face3"].lineHeight =
         props["face4"].lineHeight = props["face5"].lineHeight = props["face6"].lineHeight = 0.5;
     props["face3"].text = "Tempo";
@@ -268,6 +268,8 @@ function addExtraCubes(cubes) {
     props.depth = 165;
 
     createCube(props);
+
+    props = paintCube(lastCube, "orange");
 
     // Cost
     props["face1"].text = props["face2"].text = props["face3"].text =

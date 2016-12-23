@@ -7,7 +7,7 @@ gulp.task('webserver', function () {
             livereload: true,
             port:'7777',
             //directoryListing: true,
-            defaultFile: 'sketch.html',
+            defaultFile: 'index.html',
             open: true
         }));
 });
